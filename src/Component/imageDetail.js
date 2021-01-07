@@ -5,7 +5,10 @@ const ImageDetail = (props) => {
     return (
         <View style={styles.card}>
             <Image style ={styles.image} source={props.image}/>
-            <Text style ={styles.title}>{props.title}</Text>
+            <View style ={styles.titleView}>
+            <Text style={styles.title}>{props.title}</Text>
+            <Text style={styles.score}>The image score :- {props.score}</Text>
+            </View>
         </View>
     )
 }
@@ -13,21 +16,26 @@ const ImageDetail = (props) => {
 const styles = StyleSheet.create({
     card:{
         flexDirection:'row',
-
+        marginVertical:20
     },
     image:{
         width:"40%",
-        margin:20,
-        alignItems:"center",
-        borderRadius:50
+        borderRadius:50,
 
     },
-    title:{
+    titleView:{
         width:"60%",
-        fontWeight:"900",
         alignItems:"center",
         fontSize:24,
-        padding:40
+    },
+    title:{
+        color:"blue",
+        fontSize:20,
+        padding:20,
+
+    },
+    score:{
+        color:"red"
     }
 })
 

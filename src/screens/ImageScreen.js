@@ -5,15 +5,19 @@ import {forest,mountain , beach} from '../images/Images'
 
 const ImageScreen = () => {
     return (
-        <View>
-            <ImageDetail title="Forest" image={forest}/>
-            <ImageDetail title="Mountain" image={mountain}/>
-            <ImageDetail title="Beach" image={beach}/>
+        <View style={styles.view}>
+            <ImageDetail title="Forest" image={forest} score="9"/>
+            <ImageDetail title="Mountain" image={mountain} score="7"/>
+            <ImageDetail title="Beach" image={beach} score ="3"/>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
+
+    view:{
+        padding:10
+    }
     
 })
 
