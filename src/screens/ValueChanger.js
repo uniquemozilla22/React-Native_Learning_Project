@@ -13,8 +13,8 @@ const ValueChanger = () => {
     }
     return (
         <View>
-            <TouchableOpacity style={styles.increment} onPress={increment}><Text>Increment</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.decrement}  onPress={decrement}><Text >Decrement</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.increment} onPress={increment}><Text style={styles.white}>Increment</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.decrement}  onPress={decrement}><Text style={styles.white} >Decrement</Text></TouchableOpacity>
             <CounterView value={counter}/>
         </View>
     )
@@ -23,15 +23,22 @@ const ValueChanger = () => {
 const styles= StyleSheet.create({
 
     increment:{
+        marginVertical:10,
         backgroundColor:"green",
         padding:30,
-        paddingHorizontal:"40%"
+        paddingHorizontal:"40%",
     },
     decrement:{
+        marginVertical:10,
         backgroundColor:"red",
         padding:40,
-        paddingHorizontal:"40%"
+        paddingHorizontal:"40%",
         
+    },
+    white:{
+        color:"white",
+        fontSize:15,
+        fontWeight:"700"
     }
     
 })
