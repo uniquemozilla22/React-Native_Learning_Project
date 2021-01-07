@@ -1,13 +1,14 @@
 import React from 'react'
 import {Text, View ,StyleSheet} from 'react-native'
 import ImageDetail from '../Component/imageDetail'
+import {forest,mountain , beach} from '../images/Images'
 
 const ImageScreen = () => {
     return (
         <View>
-            <ImageDetail title="Beach" image="Beach image"/>
-            <ImageDetail title="Crow" image="Crow Image"/>
-            <ImageDetail title="Branch" image="Branch Image"/>
+            <ImageDetail title="Forest" image={forest}/>
+            <ImageDetail title="Mountain" image={mountain}/>
+            <ImageDetail title="Beach" image={beach}/>
         </View>
     )
 }

@@ -1,10 +1,10 @@
 import React from 'react'
-import {Text, View ,StyleSheet} from 'react-native'
+import {Text, View ,StyleSheet,Image} from 'react-native'
 
 const ImageDetail = (props) => {
     return (
         <View style={styles.card}>
-            <Text style ={styles.image}>{props.image}</Text>
+            <Image style ={styles.image} source={props.image}/>
             <Text style ={styles.title}>{props.title}</Text>
         </View>
     )
@@ -13,23 +13,21 @@ const ImageDetail = (props) => {
 const styles = StyleSheet.create({
     card:{
         flexDirection:'row',
-        marginVertical:40,
-        borderStyle:'solid'
 
     },
     image:{
         width:"40%",
         margin:20,
-        backgroundColor:"red",
-        alignItems:"center"
+        alignItems:"center",
+        borderRadius:50
 
     },
     title:{
         width:"60%",
-        padding:40,
-        backgroundColor:"red",
-        alignItems:"center"
-
+        fontWeight:"900",
+        alignItems:"center",
+        fontSize:24,
+        padding:40
     }
 })
 
