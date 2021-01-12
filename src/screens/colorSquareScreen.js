@@ -1,83 +1,46 @@
-import React,{useState} from 'react'
-import {View, StyleSheet,Text, TouchableOpacity} from 'react-native'
+import React,{useState,useReducer}from 'react'
+import {View, StyleSheet,Text,TextInput, TouchableOpacity} from 'react-native'
 import ColorCounter from '../Component/ColorCounter'
 
-const colorSquareScreen = () => {
 
-    const [Red,setRed] = useState(255)
-    const [Green,setGreen] = useState(255)
-    const [Blue,setBlue] = useState(255)
-    
-
-
-    const adder =(color)=>{
-        let number = Math.round(Math.random()*256)
-        if(color==='red'){
-            let colorCode= number + Red            
-            if(colorCode>255){
-                setRed(255)
-            }
-            else{
-                setRed(colorCode)
-            }
-
-        }else if(color==='green'){
-            let colorCode= number + Green            
-            if(colorCode>255){
-                setGreen(255)
-            }
-            else{
-                setGreen(colorCode)
-            }
-        }else if(color==='blue'){
-            let colorCode= number + Blue            
-            if(colorCode>255){
-                setBlue(255)
-            }
-            else{
-                setBlue(colorCode)
-            }
+const reducer =(state,action)=>{
+    let sum = state.red + action.amount
+    switch(action.colorToChange){
+        case 'red':{
+            
+            return sum>=256||sum<0 ?  state : {...state, red:sum}
         }
+        case 'green':{
+            return sum>=256||sum<0 ?  state : {...state, green:sum}
 
-    }
-    const deducter =(color)=>{
-        let number = Math.round(Math.random()*256)
-        if(color==='red'){
-            let colorCode= number - Red            
-            if(colorCode<0){
-                setRed(0)
-            }
-            else{
-                setRed(colorCode)
-            }
-
-        }else if(color==='green'){
-            let colorCode= number - Green            
-            if(colorCode<0){
-                setGreen(0)
-            }
-            else{
-                setGreen(colorCode)
-            }
-        }else if(color==='blue'){
-            let colorCode= number - Blue            
-            if(colorCode<0){
-                setBlue(0)
-            }
-            else{
-                setBlue(colorCode)
-            }
         }
+        case 'blue':{
+            return sum>=256||sum<0 ?  state : {...state, blue:sum}
 
-
+        }
+        default:
+            return state
     }
-    const Color=`rgb(${Red},${Green},${Blue})`
+}
+
+
+const colorSquareScreen = () => { 
+    const [state,dispatch]=useReducer(reducer,{red:0,green:0,blue:0})
+    const {red, green,blue}=state
+    const [Color_increment,setColor_increment] = useState(50)
+
+
+
+ 
+    const Color=`rgb(${red},${green},${blue})` 
     
     return (
         <>
-        <ColorCounter color='red' functionToAdd={adder} functionToDeduct={deducter}/>
-        <ColorCounter color='green' functionToAdd={adder} functionToDeduct={deducter}/>
-        <ColorCounter color='blue' functionToAdd={adder} functionToDeduct={deducter}/>        
+        
+        <TextInput onChange={(e)=>setColor_increment(e.target.value)} style={styles.textInput}/>
+        <ColorCounter color='red' functionToAdd={()=> dispatch({colorToChange:"red" , amount:Color_increment})} functionToDeduct={()=> dispatch({colorToChange:"red" , amount:-1 * Color_increment})}/>
+        <ColorCounter color='green' functionToAdd={()=> dispatch({colorToChange:"green" , amount:Color_increment})} functionToDeduct={()=> dispatch({colorToChange:"green" , amount:-1 * Color_increment})}/>
+        <ColorCounter color='blue' functionToAdd={()=> dispatch({colorToChange:"blue" , amount:Color_increment})} functionToDeduct={()=> dispatch({colorToChange:"blue" , amount:-1 * Color_increment})}/>        
         <View style={{height:100,width:"100%",backgroundColor:Color,paddingHorizontal:"35%"}}>
             <Text>{Color}</Text>
         </View>
@@ -87,23 +50,10 @@ const colorSquareScreen = () => {
 }
 
 const styles = StyleSheet.create({
-    btnView:{
-        marginVertical:10
-    },
-    greenBtn:{
-        fontSize:15,
-        backgroundColor:'green',
-        paddingVertical:20
-    },
-    redBtn:{
-        fontSize:15,
-        backgroundColor:'red',
-        paddingVertical:20
-    },
-    text:{
-        color:'white',
-        alignItems:'center',
-        paddingHorizontal:"40%"
+    
+    textInput:{
+        color:'black',
+        backgroundColor:'white'
     },
     
 })
