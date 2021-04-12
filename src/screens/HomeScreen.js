@@ -1,46 +1,61 @@
 import React from "react";
-import { Text, StyleSheet ,View,Button} from "react-native";
+import { Text, StyleSheet, View, Button } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-const HomeScreen = ({navigation}) => {
-
-  return (  
-  <View>
+const HomeScreen = ({ navigation }) => {
+  return (
+    <View>
       <Text style={styles.text}>Hey there!</Text>
-      <Button  onPress={()=>navigation.navigate('Components')} title="Go to Components"/>
-      <TouchableOpacity style={styles.button}  onPress={()=>navigation.navigate('List')}>
+      <Button
+        onPress={() => navigation.navigate("Components")}
+        title="Go to Components"
+      />
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate("List")}
+      >
         <Text>Go to List</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button}  onPress={()=>navigation.navigate('Image')}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate("Image")}
+      >
         <Text>Go to Image</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button}  onPress={()=>navigation.navigate('Value')}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate("Value")}
+      >
         <Text>Go to Value</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button}  onPress={()=>navigation.navigate('Color')}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate("Color")}
+      >
         <Text>Go to Color Creator</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button}  onPress={()=>navigation.navigate('Sqaure')}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate("Sqaure")}
+      >
         <Text>Go to Color Square Changing</Text>
       </TouchableOpacity>
-  </View>
-    
-    );
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 30
+    fontSize: 30,
   },
-  button:{
-    color:"white",
-    backgroundColor:'skyblue',
-    alignItems:'center',
-    width:'100%',
-    padding:10,
-    marginTop:10,
-
-  }
+  button: {
+    color: "white",
+    backgroundColor: "skyblue",
+    alignItems: "center",
+    width: "100%",
+    padding: 10,
+    marginTop: 10,
+  },
 });
 
 export default HomeScreen;
