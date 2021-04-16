@@ -1,1 +1,1 @@
-Completed video : 20. Community convention in reducers
+Completed video : State Lesson Completed

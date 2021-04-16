@@ -40,6 +40,13 @@ const HomeScreen = ({ navigation }) => {
       >
         <Text>Go to Color Square Changing</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate("TextInput")}
+      >
+        <Text>Text Input</Text>
+      </TouchableOpacity>
     </View>
   );
 };
