@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     padding: 15,
     borderColor: "red",
     flexDirection: "row",
+    justifyContent: "space-between",
   },
 
   textOneStyle: {
