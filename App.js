@@ -8,6 +8,7 @@ import ValueChanger from "./src/screens/ValueChanger";
 import ColorScreens from "./src/screens/ColorScreens";
 import ColorSquare from "./src/screens/colorSquareScreen";
 import TextInputScreen from "./src/screens/TextInputScreen";
+import BoxScreen from "./src/screens/BoxScreen";
 
 const navigator = createStackNavigator(
   {
@@ -19,6 +20,7 @@ const navigator = createStackNavigator(
     Sqaure: ColorSquare,
     Color: ColorScreens,
     TextInput: TextInputScreen,
+    BoxScreen: BoxScreen,
   },
   {
     initialRouteName: "Home",

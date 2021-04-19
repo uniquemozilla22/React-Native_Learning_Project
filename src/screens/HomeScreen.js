@@ -1,52 +1,52 @@
 import React from "react";
 import { Text, StyleSheet, View, Button } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
 
 const HomeScreen = ({ navigation }) => {
   return (
     <View>
       <Text style={styles.text}>Hey there!</Text>
       <Button
+        style={styles.button}
         onPress={() => navigation.navigate("Components")}
         title="Go to Components"
       />
-      <TouchableOpacity
+      <Button
         style={styles.button}
         onPress={() => navigation.navigate("List")}
-      >
-        <Text>Go to List</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
+        title={"Go to List"}
+      />
+      <Button
         style={styles.button}
         onPress={() => navigation.navigate("Image")}
-      >
-        <Text>Go to Image</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
+        title={"Go to Image"}
+      />
+      <Button
         style={styles.button}
         onPress={() => navigation.navigate("Value")}
-      >
-        <Text>Go to Value</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
+        title={"Go to Value"}
+      />
+      <Button
         style={styles.button}
         onPress={() => navigation.navigate("Color")}
-      >
-        <Text>Go to Color Creator</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
+        title={"Go to Color Creator"}
+      />
+      <Button
         style={styles.button}
         onPress={() => navigation.navigate("Sqaure")}
-      >
-        <Text>Go to Color Square Changing</Text>
-      </TouchableOpacity>
+        title={"Go to Color Square Changing"}
+      />
 
-      <TouchableOpacity
+      <Button
         style={styles.button}
         onPress={() => navigation.navigate("TextInput")}
-      >
-        <Text>Text Input</Text>
-      </TouchableOpacity>
+        title={"Text Input"}
+      />
+
+      <Button
+        style={styles.button}
+        onPress={() => navigation.navigate("BoxScreen")}
+        title={"Box Screen"}
+      />
     </View>
   );
 };
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "100%",
     padding: 10,
-    marginTop: 10,
+    marginVertical: 10,
   },
 });
 
