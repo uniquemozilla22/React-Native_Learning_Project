@@ -12,7 +12,8 @@ There are features that can be used while learning the basics of the React Nativ
 ### 3. Sclability in the application
 ### 4. Proper Documentation in the application
 
-##Visual Representation of application
+## Visual Representation of application
+
 ![The React Native Application Basics ](https://user-images.githubusercontent.com/49606627/115212467-46930e00-a120-11eb-8a19-22c60e477819.gif)
 
 
